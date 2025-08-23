@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Movie Recommender</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header class="site-header">
+    <h1>🎬 Movie Recommender</h1>
+    <p>Type a movie title and get 5 similar picks.</p>
+  </header>
+
+  <main class="container">
+    <form id="searchForm" class="search">
+      <input
+        id="movieInput"
+        type="text"
+        placeholder="e.g., Inception"
+        autocomplete="on"
+        aria-label="Movie title"
+        required
+      />
+      <button id="searchBtn" type="submit">Recommend</button>
+    </form>
+
+    <div id="status" class="status" aria-live="polite"></div>
+
+    <section id="results" class="grid" aria-label="Recommendations"></section>
+  </main>
+
+  <footer class="site-footer">
+    <small>Powered by your Flask API • Uses TMDB posters</small>
+  </footer>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
